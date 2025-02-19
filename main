@@ -1,0 +1,62 @@
+/*
+Simultaneo 1: LEDs piscam simultanêamente.
+Exemplo 2: LEDs piscam verde e vermelho de forma intercalada
+Exemplo 3: Simulação de semáforo
+Crie um código para simular um semáforo.
+*/
+
+// Atribuir nomes aos pinos dos LEDs
+#define ledRED 2
+#define ledYEL 5
+#define ledGRE 9
+
+void setup() {
+  //  Configuração dos pinos dos LEDs (OUTPUT) 
+  pinMode(ledRED, OUTPUT);
+  pinMode(ledYEL, OUTPUT);
+  pinMode(ledGRE, OUTPUT);
+}
+
+void loop() {
+  // simultaneo();
+  // intercalado();
+  // semaforo();
+}
+
+void simultaneo(){
+// Exemplo 1:
+// Os 3 LEDs deverão piscar simultaneamente
+// em intervalos de 300 ms.
+  digitalWrite(ledRED, HIGH);
+  digitalWrite(ledYEL, HIGH);
+  digitalWrite(ledGRE, HIGH);
+  delay(300);
+  digitalWrite(ledRED, LOW);
+  digitalWrite(ledYEL, LOW);
+  digitalWrite(ledGRE, LOW);
+  delay(300); 
+}
+
+void intercalado(){
+  digitalWrite(ledRED, LOW);
+  digitalWrite(ledGRE, HIGH);
+  delay(400);
+  digitalWrite(ledGRE, LOW);
+  digitalWrite(ledRED, HIGH);
+  delay(400);
+}
+
+void semaforo(){
+  digitalWrite(ledRED, LOW);
+  digitalWrite(ledYEL, LOW);
+  digitalWrite(ledGRE, HIGH);
+  delay(400);
+  digitalWrite(ledRED, LOW);
+  digitalWrite(ledYEL, HIGH);
+  digitalWrite(ledGRE, LOW);
+  delay(200);
+  digitalWrite(ledRED, HIGH);
+  digitalWrite(ledYEL, LOW);
+  digitalWrite(ledGRE, LOW);
+  delay(600);
+}
